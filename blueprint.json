@@ -1,0 +1,93 @@
+{
+	"title": "owncloud",
+	"description": "owncloud",
+	"variables": {
+		"admin_password": ""
+	},
+	"os_packages": {
+		"adds": [
+			"mariadb-client",
+			"php-json",
+			"php-mbstring",
+			"php-imagick",
+			"php-curl",
+			"php-gd",
+			"libicu-dev",
+			"php-net-ftp",
+			"php-ldap",
+			"php-apcu",
+			"mcrypt",
+			"libmcrypt-dev"
+		]
+	},
+	"modules": {
+		"php": [
+			"mysql",
+			"mbstring",
+			"gd2",
+			"zip",
+			"openssl",
+			"intl"
+		],
+		"apache": [
+			"rewrite",
+			"negotiation",
+			"headers"
+		]
+	},
+	"volumes": [
+		{
+			"type": "dir",
+			"destination": "/var/www/owncloud/config/",
+			"source": "/var/lib/containers/^^identifier^^/config"
+		},
+		{
+			"type": "dir",
+			"destination": "/var/www/data",
+			"source": "/var/lib/containers/^^identifier^^/data"
+		},
+		{
+			"type": "dir",
+			"destination": "/var/www/owncloud/apps",
+			"source": "/var/lib/containers/^^identifier^^/apps"
+		},
+		{
+			"type": "dir",
+			"destination": "/var/www/owncloud/apps-external",
+			"source": "/var/lib/containers/^^identifier^^/apps-external"
+		}
+	],
+	"bindings": [
+		{
+			"type": "embed",
+			"descriptor": {
+				"repository": "https://github.com/v2Blueprints/ap_php7"
+			},
+			"configuration": {
+				"TZ": "Australia/Sydney",
+				"port": 8880,
+				"ServerAdmin": "Owncloud Admin"
+			}
+		},
+		{
+			"descriptor": {
+				"repository": "https://github.com/v2Blueprints/mariadb"
+			}
+		}
+	],
+	"packages": [
+		{
+			"descriptor": {
+				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2",
+				"extraction": "tar -xpf",
+				"extracted_path": "owncloud",
+				"destination": "/var/www/owncloud"
+			}
+		}
+	],
+	"containers": [
+		{
+			"type": "lxd"
+		}
+	]
+}
