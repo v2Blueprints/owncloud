@@ -1,10 +1,10 @@
 {
 	"title": "owncloud",
 	"description": "owncloud",
-	"variables": {
+	"configuration": {
 		"admin_password": ""
 	},
-	"os_packages": {
+	"system_packages": {
 		"adds": [
 			"mariadb-client",
 			"php-json",
@@ -75,14 +75,14 @@
 			}
 		}
 	],
-	"packages": [
+	"other_packages": [
 		{
 			"descriptor": {
-				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2",
-				"extraction": "tar -xpf",
-				"extracted_path": "owncloud",
-				"destination": "/var/www/owncloud"
-			}
+				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
+			},
+			"extraction": "tar -xpf",
+			"extracted_path": "owncloud",
+			"destination": "/var/www/owncloud"			
 		}
 	],
 	"containers": [

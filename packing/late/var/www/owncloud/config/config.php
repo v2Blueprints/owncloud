@@ -8,17 +8,17 @@ $CONFIG = array(
 
 'trusted_domains' =>
   array (
-   0 => '^^fqdn^^',
+   0 => '^^domain.fqdn^^',
    2 => 'localhost',
   ),
 
 'datadirectory' => '/var/www/data',
 'version' => '',
 'dbtype' => 'mysql',
-'dbhost' => '^^mariadb.dbhost^^',
-'dbuser' => '^^maraiadb.user^^',
-'dbname' => '^^maraiadb.database_name^^',
-'dbpassword' => '^^passwd^^',
+'dbhost' => '^^mariadb.hostname^^',
+'dbuser' => '^^mariadb.username^^',
+'dbname' => '^^mariadb.database_name^^',
+'dbpassword' => '^^mariadb.password^^',
 'dbtableprefix' => '',
 'installed' => false,
 'default_language' => 'en',
@@ -30,8 +30,8 @@ $CONFIG = array(
 'session_lifetime' => 60 * 60 * 24,
 'session_keepalive' => true,
 'skeletondirectory' => '',
-'mail_domain' => '_^^fqdn^^',
-'mail_from_address' => 'owncloud@^^fqdn^^',
+'mail_domain' => '_^^domain.identifier^^',
+'mail_from_address' => 'owncloud@^^domain.identifier^^',
 'mail_smtpdebug' => false,
 'mail_smtpmode' => 'smtp',
 'mail_smtphost' => '^^smtp_host^^',
@@ -67,8 +67,8 @@ $CONFIG = array(
  * The default timezone for logfiles is UTC. You may change this; see
  * http://php.net/manual/en/timezones.php
  */
-'logtimezone' => '^^timezone_country_city^^',
-          
+'logtimezone' => '^^configuration.timezone_country_city^^',
+
 /**
  * Append all database queries and parameters to the log file. Use this only for
  * debugging, as your logfile will become huge.
@@ -137,5 +137,3 @@ $CONFIG = array(
 'secret' => '^^random(32)^^',
 
 );
-
-  	
