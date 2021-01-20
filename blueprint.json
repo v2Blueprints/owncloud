@@ -77,7 +77,7 @@
 	],
 	"other_packages": [
 		{
-			"descriptor": {
+			"target": {
 				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
 			},
 			"extraction": "tar -xpf",
