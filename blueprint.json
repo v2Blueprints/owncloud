@@ -1,9 +1,9 @@
 {
 	"identifier": "owncloud",
-	  "about": {
-    "title": "owncloud",
-    "explanation": "owncloud test"
-  },
+	"about": {
+		"title": "owncloud",
+		"explanation": "owncloud test"
+	},
 	"configuration": {
 		"admin_password": "^^random(8)^^"
 	},
@@ -40,22 +40,18 @@
 	},
 	"volumes": [
 		{
-			"type": "dir",
 			"destination": "/var/www/owncloud/config/",
 			"source": "/var/lib/containers/^^identifier^^/config"
 		},
 		{
-			"type": "dir",
 			"destination": "/var/www/data",
 			"source": "/var/lib/containers/^^identifier^^/data"
 		},
 		{
-			"type": "dir",
 			"destination": "/var/www/owncloud/apps",
 			"source": "/var/lib/containers/^^identifier^^/apps"
 		},
 		{
-			"type": "dir",
 			"destination": "/var/www/owncloud/apps-external",
 			"source": "/var/lib/containers/^^identifier^^/apps-external"
 		}
@@ -78,14 +74,26 @@
 			}
 		}
 	],
-	"other_packages": [
+	"images": [
 		{
-			"target": {
-				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
-			},
-			"extraction": "tar -xpf",
-			"extracted_path": "owncloud",
-			"destination": "/var/www/owncloud"			
+			"type": "docker",
+			"image": "engines/debian"
 		}
-	]
-}
+	],
+	"executions": [
+		{
+			"type": "docker",
+			"CMD": "/usr/local/bin/start.sh"
+		}
+		],
+		"other_packages": [
+			{
+				"target": {
+					"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
+				},
+				"extraction": "tar -xpf",
+				"extracted_path": "owncloud",
+				"destination": "/var/www/owncloud"
+			}
+		]
+	}
