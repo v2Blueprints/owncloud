@@ -59,7 +59,7 @@
 	"bindings": [
 		{
 			"type": "embed",
-			"descriptor": {
+			"target": {
 				"repository": "https://github.com/v2Blueprints/ap_php7"
 			},
 			"configuration": {
@@ -69,7 +69,7 @@
 			}
 		},
 		{
-			"descriptor": {
+			"target": {
 				"repository": "https://github.com/v2Blueprints/mariadb"
 			}
 		}
