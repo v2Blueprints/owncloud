@@ -1,8 +1,11 @@
 {
-	"title": "owncloud",
-	"description": "owncloud",
+	"identifier": "owncloud",
+	  "about": {
+    "title": "owncloud",
+    "explanation": "owncloud test"
+  },
 	"configuration": {
-		"admin_password": ""
+		"admin_password": "^^random(8)^^"
 	},
 	"system_packages": {
 		"adds": [
@@ -83,11 +86,6 @@
 			"extraction": "tar -xpf",
 			"extracted_path": "owncloud",
 			"destination": "/var/www/owncloud"			
-		}
-	],
-	"containers": [
-		{
-			"type": "lxd"
 		}
 	]
 }
