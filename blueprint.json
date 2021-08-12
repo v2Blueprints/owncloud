@@ -67,7 +67,12 @@
 				"port": 8880,
 				"ServerAdmin": "Owncloud Admin"
 			}
-		},
+		},{
+			"type": "embed",
+			"target": {
+				"repository": "https://github.com/v2Blueprints/wap"
+			}
+		},	
 		{
 			"target": {
 				"repository": "https://github.com/v2Blueprints/mariadb"

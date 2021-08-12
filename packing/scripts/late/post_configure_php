@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/php
 
 /home/app/occ maintenance:install -n --database "mysql" --database-host  ^^mariadb.hostname^^ --database-name ^^mariadb.database_name^^ --data-dir /var/www/data --database-user ^^mariadb.username^^ --database-pass ^^mariadb.password^^ --admin-user "admin" --admin-pass ^^configuration.admin_password^^
 /home/app/occ background:cron
