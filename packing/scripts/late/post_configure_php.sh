@@ -1,7 +1,7 @@
 #!/bin/sh
 
-/home/app/occ maintenance:install -n --database "mysql" --database-host  ^^mariadb.hostname^^ --database-name ^^mariadb.database_name^^ --data-dir /var/www/data --database-user ^^mariadb.username^^ --database-pass ^^mariadb.password^^ --admin-user "admin" --admin-pass ^^configuration.admin_password^^
-/home/app/occ background:cron
+/var/www/owncloud/occ maintenance:install -n --database "mysql" --database-host  ^^mariadb.hostname^^ --database-name ^^mariadb.database_name^^ --data-dir /var/www/data --database-user ^^mariadb.username^^ --database-pass ^^mariadb.password^^ --admin-user "admin" --admin-pass ^^configuration.admin_password^^
+/var/www/owncloud/occ background:cron
 #/home/app/occ market:install user_ldap
 #/home/app/occ ldap:create-empty-config default
 #/home/app/occ ldap:set-config default ldapAgentName $ldap_dn
