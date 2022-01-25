@@ -41,19 +41,19 @@
 	"volumes": [
 		{
 			"destination": "/var/www/owncloud/config/",
-			"source": "/var/lib/containers/^^identifier^^/config"
+			"source": "config"
 		},
 		{
 			"destination": "/var/www/data",
-			"source": "/var/lib/containers/^^identifier^^/data"
+			"source": "data"
 		},
 		{
 			"destination": "/var/www/owncloud/apps",
-			"source": "/var/lib/containers/^^identifier^^/apps"
+			"source": "apps"
 		},
 		{
 			"destination": "/var/www/owncloud/apps-external",
-			"source": "/var/lib/containers/^^identifier^^/apps-external"
+			"source": "apps-external"
 		}
 	],
 	"bindings": [
@@ -67,48 +67,21 @@
 				"port": 8880,
 				"ServerAdmin": "Owncloud Admin"
 			}
-		},{
-			"type": "embed",
-			"target": {
-				"repository": "https://github.com/v2Blueprints/wap"
-			}
-		},	
+		},
 		{
 			"target": {
 				"repository": "https://github.com/v2Blueprints/mariadb"
 			}
 		}
 	],
-	"executions": [
+	"other_packages": [
 		{
-			"type": "docker",
-			"CMD": "/usr/local/bin/start.sh"
+			"target": {
+				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
+			},
+			"extraction": "tar -xpf",
+			"extracted_path": "owncloud",
+			"destination": "/var/www/owncloud"
 		}
-		],		
-	"container": {
-		"docker": {
-			"user": "www",
-			"domainname": "^^domain.qualified_name^^",
-			"host": "^^identifier^^",
-			"working_dir": "/var/www/",
-			"restart": "unless-stopped",
-			"max_retry_count": 5, 
-			"dns": "^^system_config.dns_servers",
-			"dns_search": "spaces.internal",
-			"memory" : "1024M",
-			"label": [ { "user_def_a": "value_a"} , { "user_def_b": "value_b"} ],
-			"shm_size" : "100M",
-			 "ports" : { "internal" : 8000, "external" : 8000}
-		}
-	},
-		"other_packages": [
-			{
-				"target": {
-					"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
-				},
-				"extraction": "tar -xpf",
-				"extracted_path": "owncloud",
-				"destination": "/var/www/owncloud"
-			}
-		]
-	}
+	]
+}
