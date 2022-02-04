@@ -67,7 +67,7 @@ $CONFIG = array(
  * The default timezone for logfiles is UTC. You may change this; see
  * http://php.net/manual/en/timezones.php
  */
-'logtimezone' => '^^configuration.timezone_country_city^^',
+'logtimezone' => '^^owncloud.timezone_country_city^^',
 
 /**
  * Append all database queries and parameters to the log file. Use this only for
