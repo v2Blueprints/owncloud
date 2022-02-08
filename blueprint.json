@@ -43,19 +43,19 @@
 	"volumes": [
 		{
 			"destination": "/var/www/owncloud/config/",
-			"source": "config"
+			"name": "config"
 		},
 		{
 			"destination": "/var/www/data",
-			"source": "data"
+			"name": "data"
 		},
 		{
 			"destination": "/var/www/owncloud/apps",
-			"source": "apps"
+			"name": "apps"
 		},
 		{
 			"destination": "/var/www/owncloud/apps-external",
-			"source": "apps-external"
+			"name": "apps-external"
 		}
 	],
 	"bindings": [
