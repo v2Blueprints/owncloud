@@ -7,7 +7,7 @@
 	"binding_target": {
 		"configuration": {
 			"admin_password": "^^random(8)^^"
-		},
+		}
 	},
 	"system_packages": {
 		"adds": [
