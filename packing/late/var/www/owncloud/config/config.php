@@ -8,8 +8,7 @@ $CONFIG = array(
 
 'trusted_domains' =>
   array (
-   0 => '^^domain.fqdn^^',
-   2 => 'localhost',
+   ^^domains.as_owncloud_trusted_names^^,
   ),
 
 'datadirectory' => '/var/www/data',
