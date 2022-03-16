@@ -6,10 +6,7 @@ $CONFIG = array(
 'instanceid' => 'oc_^^random(14)^^',
 'passwordsalt' => '_^^random(14)^^',
 
-'trusted_domains' =>
-  array (
-   ^^domains.as_owncloud_trusted_names^^,
-  ),
+#'trusted_domains' =>  array (  ),
 
 'datadirectory' => '/var/www/data',
 'version' => '',
