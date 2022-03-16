@@ -30,3 +30,5 @@
 
 /var/www/owncloud/occ config:system:set trusted_domains  0 --value=localhost
 /var/www/owncloud/occ config:system:set trusted_domains  2 --value=^^domain.fqdn^^
+
+touch /var/www/owncloud/data/.first_run_ran
