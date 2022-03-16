@@ -28,5 +28,5 @@
 #/home/app/occ ldap:set-config default ldapUserFilterMode 1
 #/home/app/occ ldap:set-config default ldapGroupFilterMode 1
 
-/home/app/occ config:system:set trusted_domains  0 --value=localhost
-/home/app/occ config:system:set trusted_domains  2 --value=^^domain.fqdn^^
+/var/www/owncloud/occ config:system:set trusted_domains  0 --value=localhost
+/var/www/owncloud/occ config:system:set trusted_domains  2 --value=^^domain.fqdn^^
