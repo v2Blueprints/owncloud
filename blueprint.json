@@ -22,7 +22,12 @@
 			"php-ldap",
 			"php-apcu",
 			"mcrypt",
-			"libmcrypt-dev"
+			"libmcrypt-dev",
+			"php-zip",
+			"php-xml",
+			"libxml2",
+			"php-mysql",
+			"php-intl"
 		]
 	},
 	"modules": {
