@@ -30,7 +30,7 @@
 			"php-intl"
 		]
 	},
-	"modules": {
+	"managed_packages": {
 		"php": [
 			"mysql",
 			"mbstring",
@@ -81,7 +81,7 @@
 			}
 		}
 	],
-	"other_packages": [
+	"bundled_packages": [
 		{
 			"target": {
 				"repository": "https://download.owncloud.org/community/owncloud-latest.tar.bz2"
